@@ -5,6 +5,9 @@ open Domain
 
 [<EntryPoint>]
 let main argv =
-    let x = CardType(CardValueType.Ace, CardSuitType.Spades)
-    printfn "%A" x
+    let cardA = CardType(CardValueType.King, CardSuitType.Spades)
+    let cardB = CardType(CardValueType.Ace, CardSuitType.Spades)
+    let result = (Card.biggerThan cardB cardA)
+
+    printfn "%A" result
     0 // return an integer exit code
