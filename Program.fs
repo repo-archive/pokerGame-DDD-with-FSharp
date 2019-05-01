@@ -7,7 +7,8 @@ open Domain
 let main argv =
     let cardA = CardType(CardValueType.King, CardSuitType.Spades)
     let cardB = CardType(CardValueType.Ace, CardSuitType.Spades)
-    let result = (Card.biggerThan cardB cardA)
 
-    printfn "%A" result
+    printfn "%A" (Card.biggerThan cardA cardB)
+    printfn "%A" (Card.biggerThan cardB cardA)
+    
     0 // return an integer exit code
