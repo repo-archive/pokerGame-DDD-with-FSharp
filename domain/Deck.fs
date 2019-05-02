@@ -3,7 +3,6 @@
 open Domain
 
 let generateFullCardDeckWithoutJoker : DeckType = 
-    
     let systemArrayToArray (cardSuitSystemArray : System.Array, cardValueSystemArray : System.Array) = 
         let cardSuitArray = (Array.init cardSuitSystemArray.Length (fun index -> (cardSuitSystemArray.GetValue index) :?> CardSuitType))
         let cardValueArray = (Array.init cardValueSystemArray.Length (fun index -> (cardValueSystemArray.GetValue index) :?> CardValueType))
@@ -33,3 +32,8 @@ let generateFullCardDeckWithoutJoker : DeckType =
     |> combineArrays
     |> shuffleArray
     |> Array.toList
+
+let giveCards (deck : DeckType) (number : int) : (HandType * DeckType) option =
+    let giveCards' = List.splitAt number deck
+    
+    if List.length deck < number then Option.None else Option.Some  giveCards'
