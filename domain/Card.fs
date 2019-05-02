@@ -1,4 +1,3 @@
-﻿namespace Domain
+﻿module Card
 
-module Card = 
-    let biggerThan cardA cardB = fst cardA > fst cardB
+let biggerThan cardA cardB = fst cardA > fst cardB

@@ -3,12 +3,10 @@
 open System
 open Domain
 
+open Deck
+
 [<EntryPoint>]
 let main argv =
-    let cardA = CardType(CardValueType.King, CardSuitType.Spades)
-    let cardB = CardType(CardValueType.Ace, CardSuitType.Spades)
+    printfn "%A" Deck.generateFullCardDeckWithoutJoker
 
-    printfn "%A" (Card.biggerThan cardA cardB)
-    printfn "%A" (Card.biggerThan cardB cardA)
-    
     0 // return an integer exit code
